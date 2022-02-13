@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FlagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// // Default
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/test', [HomeController::class, 'test'])->name('home.test');
+Route::get('/retrieve', [HomeController::class, 'retrieve',])->name('home.retrieve');
+
+
+// Route::post('/retrieve/flag', 'HomeController@randomflag');
+Route::get('/test2', [FlagController::class, 'randomflag'])->name('home.test2');
+Route::post('/test', [HomeController::class, 'saveItem'])->name('home.test');
+// Route::post('/retrieve', [HomeController::class, 'randomflag'])->name('home.retrieve');
+
+    
