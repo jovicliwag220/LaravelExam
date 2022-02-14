@@ -23,11 +23,11 @@ use App\Http\Controllers\FlagController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/test', [HomeController::class, 'test'])->name('home.test');
 Route::get('/retrieve', [HomeController::class, 'retrieve',])->name('home.retrieve');
+Route::post('/test', [HomeController::class, 'saveItem'])->name('home.test');
 
 
 // Route::post('/retrieve/flag', 'HomeController@randomflag');
-Route::get('/test2', [FlagController::class, 'randomflag'])->name('home.test2');
-Route::post('/test', [HomeController::class, 'saveItem'])->name('home.test');
+Route::any('/flag', [FlagController::class, 'randomflag'])->name('home.flag');
 // Route::post('/retrieve', [HomeController::class, 'randomflag'])->name('home.retrieve');
 
     

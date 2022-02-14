@@ -3,24 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Random;
 
 class FlagController extends Controller
 {
    
-    public function randomflag(Request $request) {
+    public function randomflag() {
 
         // \Log::info(json_encode($request->all()));
-        // $randoms = Random::gettable('randoms')->where('flag', '=', 0)->update(array('flag' => 1));
-        // // $randoms = Random::Where('flag', "0")->update(['default' => 1]);
-        // $randoms->save();
 
-    Random::gettable('randoms')->where('flag', 0)->lazyById()->each(function ($request) {
-    Random::gettable('randoms')->where('id', $request->id)->update(['flag' => 1]);
-    });
+    // $request = Random::table('randoms')->where('flag', 0)->update(['flag' => 1]);
+    // Random::whereIn('flag', $request->flag)->update(['flag' => "1"]);
+    Random::table('randoms')->updateOrInsert(['flag' => 0], ['flag' => 1]);
     
-        return view('test');
+        return view('welcome');
     }
 
 }

@@ -17,7 +17,6 @@ class HomeController extends Controller
         }
 
     public function retrieve(Random $randoms, Breakdown $breakdowns) {
-    // public function retrieve(Random $randoms) {
     
         // \Log::info(json_encode($randoms->all()));
         
