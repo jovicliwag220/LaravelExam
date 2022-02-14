@@ -14,5 +14,3 @@ Vue.component('retrieve-frontend', require('./components/retrievefrontend.vue'))
 const app = new Vue({
     el: '#app',
 });
-
-// import App from '../../vue-argon-design-system-master/src/App.vue';
