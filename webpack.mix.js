@@ -11,9 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .vue() // <- Add this
-    .sass('vue-argon-design-system-master/src/assets/sass/app.scss', 'public/css')
+mix.js('resources/js/app.js', 'public/js').vue() // <- Add this
+    // .sass('resources/css/app.scss', 'public/css')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
